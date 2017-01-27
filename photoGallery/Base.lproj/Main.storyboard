@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b5m-lf-ng8">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F3V-sk-eBc">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,12 +19,16 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="XeO-9M-RGk">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="edW-Mn-5I4"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="edW-Mn-5I4">
+                            <connections>
+                                <segue destination="b5m-lf-ng8" kind="show" id="xgD-vf-5iS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -40,11 +44,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Zw8-cG-Q3H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AIh-g3-uFK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-HO-dcX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="77s-Ga-EmF"/>
@@ -58,43 +62,91 @@
             </objects>
             <point key="canvasLocation" x="1228" y="273"/>
         </scene>
-        <!--View Controller-->
+        <!--Addphoto-->
         <scene sceneID="E5r-wa-uqf">
             <objects>
-                <viewController id="b5m-lf-ng8" sceneMemberID="viewController">
+                <viewController id="b5m-lf-ng8" customClass="Addphoto" customModule="photoGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vRp-9t-e4y"/>
                         <viewControllerLayoutGuide type="bottom" id="VRU-S5-4GZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cgl-im-GGU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njc-6i-3ma">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="kvD-xz-Rjq">
-                                        <rightBarButtonItems>
-                                            <barButtonItem style="plain" systemItem="camera" id="Ueb-Vp-UVV"/>
-                                            <barButtonItem title="Item" style="plain" id="aoJ-8r-N1J">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aPH-iu-dOM">
-                                                    <rect key="frame" x="232" y="7" width="83" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Photo"/>
-                                                </button>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
-                                    </navigationItem>
-                                </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="steve_jobs_hd_wallpaper_2-t2" translatesAutoresizingMaskIntoConstraints="NO" id="h6D-FE-KB2">
+                                <rect key="frame" x="67" y="90" width="280" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Sg7-Nr-Gmp"/>
+                                    <constraint firstAttribute="height" constant="150" id="f7c-ux-T4T"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="l27-iI-mdA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="vya-Kc-OBF"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARd-Bw-9dk">
+                                <rect key="frame" x="67" y="280" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDR-9Q-Zva">
+                                <rect key="frame" x="145" y="344" width="124" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8LX-sM-Sye"/>
+                                    <constraint firstAttribute="height" constant="30" id="9Ik-px-9bb"/>
+                                    <constraint firstAttribute="width" constant="124" id="fRd-ZQ-ORV"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButton:" destination="b5m-lf-ng8" eventType="touchUpInside" id="qIk-hD-SnG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eDR-9Q-Zva" firstAttribute="top" secondItem="ARd-Bw-9dk" secondAttribute="bottom" constant="34" id="IGw-Lm-cEq"/>
+                            <constraint firstItem="ARd-Bw-9dk" firstAttribute="top" secondItem="h6D-FE-KB2" secondAttribute="bottom" constant="40" id="QpF-IB-rJZ"/>
+                            <constraint firstItem="h6D-FE-KB2" firstAttribute="top" secondItem="vRp-9t-e4y" secondAttribute="bottom" constant="26" id="RCt-Nb-QJ6"/>
+                            <constraint firstItem="h6D-FE-KB2" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="REk-X5-JAQ"/>
+                            <constraint firstItem="eDR-9Q-Zva" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="RqC-Hk-JGV"/>
+                            <constraint firstItem="ARd-Bw-9dk" firstAttribute="width" secondItem="h6D-FE-KB2" secondAttribute="width" id="X6S-xn-JeG"/>
+                            <constraint firstItem="ARd-Bw-9dk" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="YDz-U4-QHH"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kvD-xz-Rjq">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="camera" id="Ueb-Vp-UVV">
+                                <connections>
+                                    <action selector="cameraButton:" destination="b5m-lf-ng8" id="2hQ-zP-3av"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" style="plain" id="aoJ-8r-N1J">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aPH-iu-dOM">
+                                    <rect key="frame" x="267" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Photo"/>
+                                    <connections>
+                                        <action selector="gallerySelect:" destination="b5m-lf-ng8" eventType="touchUpInside" id="5jL-2M-bOZ"/>
+                                    </connections>
+                                </button>
+                                <connections>
+                                    <action selector="galleryButton:" destination="b5m-lf-ng8" id="AUu-q8-2KZ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photo" destination="h6D-FE-KB2" id="NEJ-Xc-io6"/>
+                        <outlet property="titleTextFiled" destination="ARd-Bw-9dk" id="QnK-Kz-VU4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZM-ML-POc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="-424"/>
+            <point key="canvasLocation" x="1229.5999999999999" y="-424.13793103448279"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1L-h0-66e">
@@ -115,4 +167,7 @@
             <point key="canvasLocation" x="-292" y="-99"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="steve_jobs_hd_wallpaper_2-t2" width="400" height="300"/>
+    </resources>
 </document>
