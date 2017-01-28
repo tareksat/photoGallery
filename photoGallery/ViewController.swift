@@ -2,7 +2,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var photos : [ImageData] = []
@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             photos = try context.fetch(ImageData.fetchRequest())
             tableView.reloadData()
         } catch{
-        
+            
         }
         
     }
@@ -41,17 +41,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         tableView.deselectRow(at: indexPath, animated: true)
         
-       tableView.deselectRow(at: indexPath, animated: true)
+        let image = photos[indexPath.row]
         
-    }
+        performSegue(withIdentifier: "photoSegue", sender: image)
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! Addphoto
+        if segue.identifier == "photoSegue"{
+            nextVC._photo = sender as? ImageData
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
-
+    
+    
 }
 

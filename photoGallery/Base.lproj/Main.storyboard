@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" id="XeO-9M-RGk">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="edW-Mn-5I4">
                             <connections>
-                                <segue destination="b5m-lf-ng8" kind="show" id="xgD-vf-5iS"/>
+                                <segue destination="b5m-lf-ng8" kind="show" identifier="photoSegue" id="xgD-vf-5iS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,33 +49,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="414" y="-99"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="QpM-eW-29X">
-            <objects>
-                <viewController id="izH-hJ-JJb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Htx-Em-gPj"/>
-                        <viewControllerLayoutGuide type="bottom" id="Zw8-cG-Q3H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AIh-g3-uFK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-HO-dcX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="77s-Ga-EmF"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XRB-sy-pUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1228" y="273"/>
         </scene>
         <!--Addphoto-->
         <scene sceneID="E5r-wa-uqf">
@@ -120,6 +93,19 @@
                                     <action selector="addButton:" destination="b5m-lf-ng8" eventType="touchUpInside" id="qIk-hD-SnG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rq-oa-LOg">
+                                <rect key="frame" x="125" y="382" width="124" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1PO-0a-m8m"/>
+                                    <constraint firstAttribute="width" constant="124" id="97u-RH-Pbz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Cra-a9-sTg"/>
+                                </constraints>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addButton:" destination="b5m-lf-ng8" eventType="touchUpInside" id="Bsh-uF-2Fy"/>
+                                    <action selector="deleteBTN:" destination="b5m-lf-ng8" eventType="touchUpInside" id="bcj-iD-utK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -128,8 +114,10 @@
                             <constraint firstItem="h6D-FE-KB2" firstAttribute="top" secondItem="vRp-9t-e4y" secondAttribute="bottom" constant="26" id="RCt-Nb-QJ6"/>
                             <constraint firstItem="h6D-FE-KB2" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="REk-X5-JAQ"/>
                             <constraint firstItem="eDR-9Q-Zva" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="RqC-Hk-JGV"/>
+                            <constraint firstItem="8Rq-oa-LOg" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="WgT-4F-UUC"/>
                             <constraint firstItem="ARd-Bw-9dk" firstAttribute="width" secondItem="h6D-FE-KB2" secondAttribute="width" id="X6S-xn-JeG"/>
                             <constraint firstItem="ARd-Bw-9dk" firstAttribute="centerX" secondItem="Cgl-im-GGU" secondAttribute="centerX" id="YDz-U4-QHH"/>
+                            <constraint firstItem="8Rq-oa-LOg" firstAttribute="top" secondItem="eDR-9Q-Zva" secondAttribute="bottom" constant="8" id="pRV-fd-A9D"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kvD-xz-Rjq">
@@ -155,13 +143,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateBtn" destination="eDR-9Q-Zva" id="Phh-h7-Rie"/>
+                        <outlet property="deleteBtn" destination="8Rq-oa-LOg" id="E3Z-HH-oc1"/>
                         <outlet property="photo" destination="h6D-FE-KB2" id="NEJ-Xc-io6"/>
                         <outlet property="titleTextFiled" destination="ARd-Bw-9dk" id="QnK-Kz-VU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZM-ML-POc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229.5999999999999" y="-424.13793103448279"/>
+            <point key="canvasLocation" x="1366" y="-99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1L-h0-66e">
