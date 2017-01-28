@@ -21,7 +21,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-pO-gC4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EOx-pO-gC4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KLO-aW-DYY"/>
+                            <constraint firstAttribute="trailing" secondItem="EOx-pO-gC4" secondAttribute="trailing" id="e4C-es-fvJ"/>
+                            <constraint firstItem="EOx-pO-gC4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="e7F-ab-zfp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EOx-pO-gC4" secondAttribute="bottom" id="hOb-U9-Uh1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XeO-9M-RGk">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="edW-Mn-5I4">
@@ -30,6 +42,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="EOx-pO-gC4" id="7rA-Ao-TEQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
